@@ -14,12 +14,12 @@ figure, picture {
     margin: 0;
 }
 
-h1, h2,
+/* h1, h2,
 h3, h4,
 h5, h6, 
 p {
     font-weight: 400;
-}
+} */
 
 /* set-up body */
 body {
@@ -93,9 +93,8 @@ textarea, select {
 .grid {
     display: grid;
     gap: var(--gap, 1rem);
-    grid-template-columns: repeat(3,1fr);
 }
-.grid-item {
+.grid > div {
     grid-column: span 1;
 }
 .flow > *:where(:not(:first-child)) {
@@ -103,7 +102,7 @@ textarea, select {
     /* outline: 1px solid red; */
 }
 .container {
-    padding-inline: 2em;
+    padding-inline: 4em;
     max-width: 80rem;
     margin-inline: auto;
 }
@@ -133,7 +132,6 @@ textarea, select {
 
 
 /* typography */
-
 .ff-serif { font-family: var(--ff-serif); } 
 .ff-sans-cond { font-family: var(--ff-sans-cond); } 
 .ff-sans-normal { font-family: var(--ff-sans-normal); } 
