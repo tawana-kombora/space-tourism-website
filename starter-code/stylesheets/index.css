@@ -7,32 +7,28 @@
     box-sizing: border-box;
 }
 
-/* Margins */
-body, p, 
-h1, h2, h3, h4, h5, 
-figure, picture {
+/* Reset Margins */
+body, 
+p, 
+h1, h2, 
+h3, h4, 
+h5, figure, picture {
     margin: 0;
 }
-
-/* h1, h2,
-h3, h4,
-h5, h6, 
-p {
-    font-weight: 400;
-} */
 
 /* set-up body */
 body {
     font-family: var(--ff-sans-normal);
     font-size: var(--fz-400);
 
+    background-color: rgb( var(--clr-dark) );
+    color: rgb( var(--clr-white) );
+
     line-height: 1.5;
     min-height: 100vh;
-
-    color: rgb(var(--clr-white));
-    background-color: rgb(var(--clr-dark));
 }
 
+/* Makes images easier to work with */
 img, picture {
     max-width: 100%;
     display: block;
@@ -80,7 +76,7 @@ textarea, select {
     --fz-300: 1rem;        /* 16px */
     --fz-200: 0.875rem;    /* 14px */
 
-    /* fonnt-families */
+    /* font-families */
     --ff-serif: "Bellefair", serif;
     --ff-sans-normal: "Barlow", sans-serif;
     --ff-sans-cond: "Barlow Condensed", sans-serif;
@@ -94,19 +90,18 @@ textarea, select {
     display: grid;
     gap: var(--gap, 1rem);
 }
-.grid > div {
-    grid-column: span 1;
-}
-.flow > *:where(:not(:first-child)) {
-    margin-top: var(--flow-space, 1rem);
-    /* outline: 1px solid red; */
+#colors > .grid {
+    grid-template-columns: repeat(3,1fr);
 }
 .container {
     padding-inline: 4em;
     max-width: 80rem;
     margin-inline: auto;
 }
-
+.flow > *:where(:not(:first-child)) {
+    margin-top: var(--flow-space, 1rem);
+    /* outline: 1px solid green; */
+}
 .sr-only {
     position: absolute;
     width: 1px;
@@ -117,6 +112,19 @@ textarea, select {
     clip: rect(0, 0, 0, 0);
     white-space: nowrap; /* added line */
     border: 0;
+}
+
+.numbered-title {
+    /* typography */
+    text-transform: uppercase;
+    font-family: var(--ff-sans-cond), sans-serif;
+    font-size: var(--fz-500);
+    letter-spacing: 4.72px;
+}
+.numbered-title span {
+    margin-right: .5em;
+    font-weight: 700;
+    color: rgb(var(--clr-white) / .25);
 }
 
 /* colors */
@@ -157,17 +165,4 @@ textarea, select {
 .fz-700,
 .fz-600 {
     line-height: 1.1;
-}
-
-.numbered-title {
-    /* typography */
-    text-transform: uppercase;
-    font-family: var(--ff-sans-cond), sans-serif;
-    font-size: var(--fz-500);
-    letter-spacing: 4.72px;
-}
-.numbered-title span {
-    margin-right: .5em;
-    font-weight: 700;
-    color: rgb(var(--clr-white) / .25);
 }
